@@ -11,13 +11,25 @@ import static org.junit.Assert.assertEquals;
  */
 public class Day02Test {
     @Test
-    public void example1() throws Exception {
+    public void numberPad1() throws Exception {
 
         String expectedCode = "1985";
 
         List<String> lines = Files.readAllLines(Paths.get("src/test/resources/Day02Test.txt"));
 
-        String code = Day02.decode(lines);
+        String code = Day02.decode(Day02.numberPad1, 1, 1, lines);
+
+        assertEquals(expectedCode, code);
+    }
+
+    @Test
+    public void numberPad2() throws Exception {
+
+        String expectedCode = "5DB3";
+
+        List<String> lines = Files.readAllLines(Paths.get("src/test/resources/Day02Test.txt"));
+
+        String code = Day02.decode(Day02.numberPad2, 0, 2, lines);
 
         assertEquals(expectedCode, code);
     }
